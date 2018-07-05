@@ -1,0 +1,15 @@
+from tkinter import *
+
+root = Tk()
+dict={'9897265432':'Raj','7890654321':'Suraj','8790654321':'Niraj','8123456790':'Pankaj','9128763450':'Rajni','9089787766':'Deepak','7908652341':'Sunaina','9890265432':'Raja','7890678321':'Sushil','9990654321':'Nirija','8123656790':'Pulkit','9128763444':'Rani','9089787700':'Deepika','7908657341':'Naina'}
+lb = Label(root,text="Number     Name")
+lb.pack()
+sb = Scrollbar(root)
+sb.pack(side=RIGHT, fill=Y)
+mylist = Listbox(root, yscrollcommand=sb.set)
+for key,value in dict.items():
+    mylist.insert(END,' '+key+ '     '+ dict[key])
+mylist.pack(side=LEFT, fill=Y)
+sb.configure(command=mylist.yview)
+
+root.mainloop()
